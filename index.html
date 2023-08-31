@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Yasmeen.css">
+   <title>Grade Forecaster for Teachers</title>
+</head>
+<body>
+   <header>
+      <h1>Grade Forecaster for Teachers</h1>
+   </header>
+   <main>
+      <button id="upload-button" class="main-button">Upload Excel</button>
+      <button id="add-data-button" class="main-button">Add Data</button>
+   </main>
+
+   <div class="form-container" id="overlay">
+      <div id="popup">
+         <h2>Add Student Data</h2>
+         <form id="data-form">
+            <!-- Group 1 -->
+            <div class="form-group">
+               <label for="student-name">Student Name:</label>
+               <input type="text" id="student-name" required>
+               <h2 class="GroupTitle">School and Sex</h2>
+            </div>
+            
+            <!-- Group 2 -->
+            <div class="form-group">
+               <h2 class="GroupTitle">Age and Address</h2>
+
+               <label for="school">School:</label>
+               <select id="school" required>
+                  <option value="GP">Gabriel Pereira</option>
+                  <option value="MS">Mousinho da Silveira</option>
+               </select>
+               
+               <label for="sex">Sex:</label>
+               <select id="sex" required>
+                  <option value="F">Female</option>
+                  <option value="M">Male</option>
+               </select>
+               
+               <label for="age">Age:</label>
+               <input type="number" id="age" min="15" max="22" required>
+               
+               <label for="address">Address:</label>
+               <select id="address" required>
+                  <option value="U">Urban</option>
+                  <option value="R">Rural</option>
+               </select>
+               
+               <label for="famsize">Family Size:</label>
+               <select id="famsize" required>
+                  <option value="LE3">Less or Equal to 3</option>
+                  <option value="GT3">Greater than 3</option>
+               </select>
+               
+               <label for="Pstatus">Parent's Cohabitation Status:</label>
+               <select id="Pstatus" required>
+                  <option value="T">Living Together</option>
+                  <option value="A">Apart</option>
+               </select>
+            </div>
+            
+            <!-- Group 3 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Family Size and Parent's Cohabitation Status</h2>
+
+            <label for="Medu">Mother's Education:</label>
+            <select id="Medu" required>
+               <option value="0">None</option>
+               <option value="1">Primary Education (4th grade)</option>
+               <option value="2">5th to 9th Grade</option>
+               <option value="3">Secondary Education</option>
+               <option value="4">Higher Education</option>
+            </select>
+            
+            <label for="Fedu">Father's Education:</label>
+            <select id="Fedu" required>
+               <option value="0">None</option>
+               <option value="1">Primary Education (4th grade)</option>
+               <option value="2">5th to 9th Grade</option>
+               <option value="3">Secondary Education</option>
+               <option value="4">Higher Education</option>
+            </select>
+         </div>
+
+         <!-- Group 4 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Mother's and Father's Education</h2>
+            <h2 class="GroupTitle">Mother's and Father's Job</h2>
+
+            <label for="Mjob">Mother's Job:</label>
+            <select id="Mjob" required>
+               <option value="teacher">Teacher</option>
+               <option value="health">Health Care Related</option>
+               <option value="services">Civil Services</option>
+               <option value="at_home">At Home</option>
+               <option value="other">Other</option>
+            </select>
+            
+            <label for="Fjob">Father's Job:</label>
+            <select id="Fjob" required>
+               <option value="teacher">Teacher</option>
+               <option value="health">Health Care Related</option>
+               <option value="services">Civil Services</option>
+               <option value="at_home">At Home</option>
+               <option value="other">Other</option>
+            </select>
+         </div>
+
+         <!-- Group 5 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Reason to Choose School and Student's Guardian</h2>
+
+            <label for="reason">Reason to Choose School:</label>
+            <select id="reason" required>
+               <option value="home">Close to Home</option>
+               <option value="reputation">School Reputation</option>
+               <option value="course">Course Preference</option>
+               <option value="other">Other</option>
+            </select>
+            
+            <label for="guardian">Student's Guardian:</label>
+            <select id="guardian" required>
+               <option value="mother">Mother</option>
+               <option value="father">Father</option>
+               <option value="other">Other</option>
+            </select>
+         </div>
+
+         <!-- Group 6 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Travel Time, Study Time, and Past Failures</h2>
+
+            <label for="traveltime">Travel Time to School:</label>
+            <select id="traveltime" required>
+               <option value="1">Less than 15 min.</option>
+               <option value="2">15 to 30 min.</option>
+               <option value="3">30 min. to 1 hour</option>
+               <option value="4">More than 1 hour</option>
+            </select>
+            
+            <label for="studytime">Weekly Study Time:</label>
+            <select id="studytime" required>
+               <option value="1">Less than 2 hours</option>
+               <option value="2">2 to 5 hours</option>
+               <option value="3">5 to 10 hours</option>
+               <option value="4">More than 10 hours</option>
+            </select>
+            
+            <label for="failures">Number of Past Class Failures:</label>
+            <select id="failures" required>
+               <option value="1">1 to 2 failures</option>
+               <option value="4">More than 2 failures</option>
+            </select>
+         </div>
+
+         <!-- Group 7 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Extra Educational Support, Family Educational Support, and Extra Paid Classes</h2>
+
+            <label for="schoolsup">Extra Educational Support:</label>
+            <select id="schoolsup" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            
+            <label for="famsup">Family Educational Support:</label>
+            <select id="famsup" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            
+            <label for="paid">Extra Paid Classes:</label>
+            <select id="paid" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+         </div>
+
+         <!-- Group 8 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Extra-Curricular Activities, Attended Nursery School, and Higher Education</h2>
+
+            <label for="activities">Extra-Curricular Activities:</label>
+            <select id="activities" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            
+            <label for="nursery">Attended Nursery School:</label>
+            <select id="nursery" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            
+            <label for="higher">Wants Higher Education:</label>
+            <select id="higher" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+         </div>
+
+         <!-- Group 9 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Internet Access, Romantic Relationship, and Family Relationships</h2>
+
+            <label for="internet">Internet Access at Home:</label>
+            <select id="internet" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            
+            <label for="romantic">In a Romantic Relationship:</label>
+            <select id="romantic" required>
+               <option value="yes">Yes</option>
+               <option value="no">No</option>
+            </select>
+            
+            <label for="famrel">Quality of Family Relationships:</label>
+            <input type="number" id="famrel" min="1" max="5" required>
+         </div>
+
+         <!-- Group 10 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">Free Time, Going Out, Alcohol Consumption, Health, and Absences</h2>
+
+            <label for="freetime">Free Time After School:</label>
+            <input type="number" id="freetime" min="1" max="5" required>
+            
+            <label for="goout">Going Out with Friends:</label>
+            <input type="number" id="goout" min="1" max="5" required>
+            
+            <label for="Dalc">Workday Alcohol Consumption:</label>
+            <input type="number" id="Dalc" min="1" max="5" required>
+         </div>
+
+         <!-- Group 11 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">First Period Grade, Second Period Grade, and Final Grade</h2>
+
+            <label for="Walc">Weekend Alcohol Consumption:</label>
+            <input type="number" id="Walc" min="1" max="5" required>
+            
+            <label for="health">Current Health Status:</label>
+            <input type="number" id="health" min="1" max="5" required>
+            
+            <label for="absences">Number of School Absences:</label>
+            <input type="number" id="absences" min="0" max="93" required>
+         </div>
+
+         <!-- Group 12 -->
+         <div class="form-group">
+            <h2 class="GroupTitle">First Period Grade, Second Period Grade, and Final Grade</h2>
+            <label for="G1">First Period Grade:</label>
+            <input type="number" id="G1" min="0" max="20" required>
+            
+            <label for="G2">Second Period Grade:</label>
+            <input type="number" id="G2" min="0" max="20" required>
+            
+            <label for="G3">Final Grade:</label>
+            <input type="number" id="G3" min="0" max="20" required>
+         </div>
+
+
+            
+            <button type="submit" class="secondary-button">Add to Table</button>
+         </form>
+         <button id="close-popup" class="secondary-button">Close</button>
+      </div>
+   </div>
+   
+
+ <table id="data-table">
+      <!-- Your table rows will be dynamically added here -->
+   </table>
+   <script src="script.js"></script>
+</body>
+</html>
