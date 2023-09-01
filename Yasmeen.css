@@ -3,61 +3,161 @@ body {
     margin: 0;
     padding: 0;
     background-color: #F5F5F5;
-    justify-content: center;
-    align-items: center;
+ }
+ html{
+   scroll-behavior: smooth;
+   scroll-padding-top: 3rem;
+   padding-bottom: 0%;
+ }
+ /* Center the header content */
+.header-content {
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   top: 0;
+   left: 0;
+ 
+ }
+ .title1{
+   padding-top: 60px;
+
+ }
+ .overlay1 {
+   position: relative;
+   z-index: 1;
+   height: 100vh;
+ }
+ .overlay1::before {
+   content: "";
+   /* display: block; */
+   position: absolute;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background: #1b5663;
+   background: -webkit-linear-gradient(top, #1b5663, #616162);
+   background: -o-linear-gradient(top, #1b5663 , #616162);
+   background: -moz-linear-gradient(top, #1b5663,#616162);
+   background: linear-gradient(top, #1b5663, #616162);
+   opacity: 0.8;
+ }
+
+ 
+ .main-button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px 60px;
+   font-weight :800;
+   color: #fff ;
+   font-size: 30px ;
+   border: 1px solid #0d1629;
+   border-radius:10px; 
+   margin-bottom: 30Px;
+   margin-top: 60px;
+   background-color: #0d1629;
+   flex-wrap: wrap;
  }
  
- header {
-    background-color: #007ACC;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
+ .main-button:hover {
+   border: 1px solid #fff;
+   background-color: #fff;
+   color: #0d1629;
+ }
+ .secondary-button {
+   color: #fff;
+   font-size: 20px ;
+   font-weight :600;
+   border: 1px solid #fff;
+   background-color: transparent;
+   border-radius:10px; 
+   margin-bottom: 30Px;
+   margin-top: 60px;
  }
  
+ .secondary-button:hover {
+   background-color: #fff;
+   color: #0d1629;
+ }
+
+ .se-button {
+   color: #1b5663;
+   font-size: 20px ;
+   font-weight :600;
+   /* border: 1px solid #0d1629; */
+   background-color: transparent;
+   border-radius:10px; 
+   margin-bottom: 30Px;
+   margin-top: 60px;
+ }
+ 
+ .se-button:hover {
+   background-color: #1b5663;
+   color: #0d1629;
+ }
+
+ .sec-button {
+   color: #1b5663;
+   font-size: 20px ;
+   font-weight :600;
+   background-color: transparent;
+   margin-bottom: 30Px;
+   margin-top: 60px;
+ }
+ 
+ .sec-button:hover {
+   background-color: #1b5663;
+   color: #0d1629;
+ }
+.titlecenter{
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+ .title1 {
+   flex-grow: 1;
+   display: inline;
+   justify-content: center;
+ }
+ 
+ .title1 img {
+   display: inline-block;
+   justify-content: center;
+   max-width: 100%;
+ }
+ .initial-header {
+   background-image: url('https://res.cloudinary.com/dh1lgpmm4/image/upload/v1693568716/Palestine/massjid-akssa_mabg85.jpg');
+   background-size: cover;
+   background-position: top;
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+ }
  main {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
- }
- 
- .main-button {
-    background-color: #00A0D4;
-    color: white;
-    border: none;
-    padding: 0.5rem 2rem;
-    margin: 0 1rem;
-    cursor: pointer;
- }
- 
- .secondary-button {
-    background-color: #FF9933;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    cursor: pointer;
+    display: flex;
+    gap: 16px;
  }
  
  #overlay {
     top: 0;
     left: 0;
-    width: 80%;
-    max-width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%; 
+    background-color: #1b5663;
     display: none;
     justify-content: center;
     align-items: center;
  }
  
- #popup {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
- }
- 
+  
  #data-table {
     margin: 2rem auto;
     border-collapse: collapse;
@@ -87,7 +187,7 @@ body {
    border-radius: 5px;
    padding: 20px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   width: 80%;
+   width: 100%;
 }
 
 
@@ -108,7 +208,7 @@ body {
    margin-bottom: 5px;
 }
 
-.next-btn {
+/* .next-btn {
    padding: 10px 20px;
    background-color: #007bff;
    color: #fff;
@@ -119,4 +219,63 @@ body {
 
 .next-btn:hover {
    background-color: #0056b3;
+} */
+
+.form-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh; 
+   background-color: rgba(0, 0, 0, 0.5); 
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 999;
+}
+
+/* Styles for the popup */
+#popup {
+   max-height: 80vh;
+   overflow-y: auto; 
+   height: fit-content;
+   background-color: #fff;
+   padding: 20px;
+   max-width: 90%;
+   width: 90%;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
+   }
+
+/* Form styles */
+#data-form {
+   margin-top: 20px;
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+label {
+   display: inline-flex;
+   font-weight: bold;
+   margin-bottom: 5px;
+   padding: 15px 10px;
+}
+
+input, select {
+   width: 200px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+}
+
+/* Group title style */
+.GroupTitle {
+   font-size: 20px;
+   margin-top: 20px;
+   margin-bottom: 15px;
+   font-weight: bold;
+   color: #333;
 }

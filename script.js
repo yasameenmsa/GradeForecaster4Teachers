@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const overlay = document.getElementById("overlay");
     const closePopupButton = document.getElementById("close-popup");
  
-    // تنفيذ الأكشن عند إرسال النموذج
+   // // تنفيذ الأكشن عند إرسال النموذج
     dataForm.addEventListener("submit", function(event) {
        // منع إعادة تحميل الصفحة
        event.preventDefault();

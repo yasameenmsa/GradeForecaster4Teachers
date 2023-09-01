@@ -5,33 +5,34 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="Yasmeen.css">
    <title>Grade Forecaster for Teachers</title>
+   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dh1lgpmm4/image/upload/v1690584779/AxiesAi/Coming%20soon/shortlogo_ddou81.png"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-   <header>
-      <h1>Grade Forecaster for Teachers</h1>
-   </header>
-   <main>
+<body >
+   <header class="initial-header overlay1">
+      <div class="titlecenter header-content">
+     <div class="title1">
+        	<img src="https://res.cloudinary.com/dh1lgpmm4/image/upload/v1690584779/AxiesAi/Coming%20soon/shortlogo_ddou81.png" alt="IMG"></div>
+           <div><h1>Grade Forecaster for Teachers</h1>
+      </div></div>
+     <main>
+      <button id="Download-data-button" class="secondary-button">Download Templete Excel Data</button>
       <button id="upload-button" class="main-button">Upload Excel</button>
       <button id="add-data-button" class="main-button">Add Data</button>
    </main>
+   </header>
 
    <div class="form-container" id="overlay">
       <div id="popup">
-         <h2>Add Student Data</h2>
-         <h2>Add Student Data</h2>
-
-         <form id="data-form">
-            <!-- Group 1 -->
-            <div class="form-group">
-               <label for="student-name">Student Name:</label>
-               <input type="text" id="student-name" required>
-               <h2 class="GroupTitle">School and Sex</h2>
-            </div>
-            
-            <!-- Group 2 -->
-            <div class="form-group">
-               <h2 class="GroupTitle">Age and Address</h2>
-
+          <h2>Add Student Data</h2>
+          <form id="data-form">
+              <!-- Group 1 -->
+              <div class="form-group">
+                  <label for="student-name">Student Name:</label>
+                  <input type="text" id="student-name" required>
+              </div>
+              <h2 class="GroupTitle">School & Sex & Age and Address</h2>
+                        
                <label for="school">School:</label>
                <select id="school" required>
                   <option value="GP">Gabriel Pereira</option>
@@ -64,7 +65,7 @@
                   <option value="T">Living Together</option>
                   <option value="A">Apart</option>
                </select>
-            </div>
+          
             
             <!-- Group 3 -->
          <div class="form-group">
@@ -87,7 +88,7 @@
                <option value="3">Secondary Education</option>
                <option value="4">Higher Education</option>
             </select>
-         </div>
+       
 
          <!-- Group 4 -->
          <div class="form-group">
@@ -111,7 +112,7 @@
                <option value="at_home">At Home</option>
                <option value="other">Other</option>
             </select>
-         </div>
+     
 
          <!-- Group 5 -->
          <div class="form-group">
@@ -131,7 +132,7 @@
                <option value="father">Father</option>
                <option value="other">Other</option>
             </select>
-         </div>
+ 
 
          <!-- Group 6 -->
          <div class="form-group">
@@ -158,7 +159,7 @@
                <option value="1">1 to 2 failures</option>
                <option value="4">More than 2 failures</option>
             </select>
-         </div>
+
 
          <!-- Group 7 -->
          <div class="form-group">
@@ -181,7 +182,7 @@
                <option value="yes">Yes</option>
                <option value="no">No</option>
             </select>
-         </div>
+
 
          <!-- Group 8 -->
          <div class="form-group">
@@ -204,7 +205,6 @@
                <option value="yes">Yes</option>
                <option value="no">No</option>
             </select>
-         </div>
 
          <!-- Group 9 -->
          <div class="form-group">
@@ -224,7 +224,6 @@
             
             <label for="famrel">Quality of Family Relationships:</label>
             <input type="number" id="famrel" min="1" max="5" required>
-         </div>
 
          <!-- Group 10 -->
          <div class="form-group">
@@ -252,7 +251,6 @@
             
             <label for="absences">Number of School Absences:</label>
             <input type="number" id="absences" min="0" max="93" required>
-         </div>
 
          <!-- Group 12 -->
          <div class="form-group">
@@ -263,18 +261,31 @@
             <label for="G2">Second Period Grade:</label>
             <input type="number" id="G2" min="0" max="20" required>
             
-            <label for="G3">Final Grade:</label>
-            <input type="number" id="G3" min="0" max="20" required>
-         </div>
-
-
-            
-            <button type="submit" class="secondary-button">Add to Table</button>
+                      
+            <button type="submit" class="se-button">Add to Table</button>
          </form>
-         <button id="close-popup" class="secondary-button">Close</button>
+         <button id="close-popup" class="se-button">Close</button>
       </div>
    </div>
+</div>
+
    
+<script>
+   window.onscroll = function() {scrollFunction()};
+   
+   function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+       document.getElementById("popup").style.visibility = "visible";
+       document.getElementById("popup").style.overflowY = "auto";
+     } else {
+       document.getElementById("popup").style.visibility = "hidden";
+       document.getElementById("popup").style.overflowY = "hidden";
+     }
+   }
+</script>
+
+
+
 
  <table id="data-table">
       <!-- Your table rows will be dynamically added here -->
