@@ -16,7 +16,7 @@
            <div><h1>Grade Forecaster for Teachers</h1>
       </div></div>
      <main>
-      <button id="Download-data-button" class="secondary-button">Download Templete Excel Data</button>
+      <button id="Download-data-button" class="secondary-button">Download Templete Excel</button>
       <button id="upload-button" class="main-button">Upload Excel</button>
       <button id="add-data-button" class="main-button">Add Data</button>
    </main>
@@ -24,15 +24,19 @@
 
    <div class="form-container" id="overlay">
       <div id="popup">
-          <h2>Add Student Data</h2>
-          <form id="data-form">
-              <!-- Group 1 -->
-              <div class="form-group">
-                  <label for="student-name">Student Name:</label>
-                  <input type="text" id="student-name" required>
-              </div>
-              <h2 class="GroupTitle">School & Sex & Age and Address</h2>
-                        
+         <h2>Add Student Data</h2>
+         <form id="data-form">
+            <!-- Group 1 -->
+            <div class="form-group">
+               <label for="student-name">Student Name:</label>
+               <input type="text" id="student-name" required>
+               <h2 class="GroupTitle">School and Sex</h2>
+            </div>
+            
+            <!-- Group 2 -->
+            <div class="form-group">
+               <h2 class="GroupTitle">Age and Address</h2>
+
                <label for="school">School:</label>
                <select id="school" required>
                   <option value="GP">Gabriel Pereira</option>
@@ -65,7 +69,7 @@
                   <option value="T">Living Together</option>
                   <option value="A">Apart</option>
                </select>
-          
+            </div>
             
             <!-- Group 3 -->
          <div class="form-group">
@@ -88,7 +92,7 @@
                <option value="3">Secondary Education</option>
                <option value="4">Higher Education</option>
             </select>
-       
+         </div>
 
          <!-- Group 4 -->
          <div class="form-group">
@@ -112,7 +116,7 @@
                <option value="at_home">At Home</option>
                <option value="other">Other</option>
             </select>
-     
+         </div>
 
          <!-- Group 5 -->
          <div class="form-group">
@@ -132,7 +136,7 @@
                <option value="father">Father</option>
                <option value="other">Other</option>
             </select>
- 
+         </div>
 
          <!-- Group 6 -->
          <div class="form-group">
@@ -159,7 +163,7 @@
                <option value="1">1 to 2 failures</option>
                <option value="4">More than 2 failures</option>
             </select>
-
+         </div>
 
          <!-- Group 7 -->
          <div class="form-group">
@@ -182,7 +186,7 @@
                <option value="yes">Yes</option>
                <option value="no">No</option>
             </select>
-
+         </div>
 
          <!-- Group 8 -->
          <div class="form-group">
@@ -205,6 +209,7 @@
                <option value="yes">Yes</option>
                <option value="no">No</option>
             </select>
+         </div>
 
          <!-- Group 9 -->
          <div class="form-group">
@@ -224,6 +229,7 @@
             
             <label for="famrel">Quality of Family Relationships:</label>
             <input type="number" id="famrel" min="1" max="5" required>
+         </div>
 
          <!-- Group 10 -->
          <div class="form-group">
@@ -251,6 +257,7 @@
             
             <label for="absences">Number of School Absences:</label>
             <input type="number" id="absences" min="0" max="93" required>
+         </div>
 
          <!-- Group 12 -->
          <div class="form-group">
@@ -261,15 +268,25 @@
             <label for="G2">Second Period Grade:</label>
             <input type="number" id="G2" min="0" max="20" required>
             
-                      
-            <button type="submit" class="se-button">Add to Table</button>
-         </form>
+            <!-- <label for="G3">Final Grade:</label>
+            <input type="number" id="G3" min="0" max="20" required>
+         </div> -->
+
+
+           <div class="buttons"> 
+            <button type="submit" class="add-button">Add to Table</button>
          <button id="close-popup" class="se-button">Close</button>
       </div>
+   </form>
+      </div>
    </div>
+   
+</div>
+</div>
 </div>
 
-   
+</form>
+<!--    
 <script>
    window.onscroll = function() {scrollFunction()};
    
@@ -282,14 +299,58 @@
        document.getElementById("popup").style.overflowY = "hidden";
      }
    }
-</script>
+</script> -->
 
 
 
-
- <table id="data-table">
+<div class="table-container">
+   <table id="data-table">
+         <caption>Student Data</caption>
+         <thead>
+            <tr>
+               <th>Student Name</th>
+               <th>School</th>
+               <th>Sex</th>
+               <th>Age</th>
+               <th>Address</th>
+               <th>Famsize</th>
+               <th>Pstatus</th>
+               <th>Medu</th>
+               <th>Fedu</th>
+               <th>Mjob</th>
+               <th>Fjob</th>
+               <th>Reason</th>
+               <th>Guardian</th>
+               <th>Traveltime</th>
+               <th>Studytime</th>
+               <th>Failures</th>
+               <th>Schoolsup</th>
+               <th>Famsup</th>
+               <th>Paid</th>
+               <th>Activities</th>
+               <th>Nursery</th>
+               <th>Higher</th>
+               <th>Internet</th>
+               <th>Romantic</th>
+               <th>Famrel</th>
+               <th>Freetime</th>
+               <th>Goout</th>
+               <th>Dalc</th>
+               <th>Walc</th>
+               <th>Health</th>
+               <th>Absences</th>
+               <th>G1</th>
+               <th>G2</th>
+               <th>G3</th>
+            </tr>
+         </thead>
+      
       <!-- Your table rows will be dynamically added here -->
-   </table>
+      </table>
+   </div>
+   <input type="file" id="file-input" style="display: none;">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
    <script src="script.js"></script>
 </body>
 </html>
